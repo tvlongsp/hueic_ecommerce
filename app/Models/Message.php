@@ -23,4 +23,18 @@ class Message extends Model
         'content',
     ];
 
+    public function admin()
+    {
+        return $this->belongsTo(Admin::class, 'admin_id');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function parent()
+    {
+        return $this->belongsTo(Message::class, 'parent_id');
+    }
 }

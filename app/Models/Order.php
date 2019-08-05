@@ -26,4 +26,13 @@ class Order extends Model
         'admin_id',
     ];
 
+    public function orderDetails()
+    {
+        return $this->hasMany(OrderDetail::class, 'order_id', 'id');
+    }
+
+    public function infoDelivery()
+    {
+        return $this->hasOne(InfoDelivery::class, 'info_delivery_id');
+    }
 }
