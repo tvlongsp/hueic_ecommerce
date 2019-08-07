@@ -25,4 +25,13 @@ class InfoDelivery extends Model
         'note',
     ];
 
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function order()
+    {
+        return $this->belongsTo(InfoDelivery::class, 'info_delivery_id');
+    }
 }

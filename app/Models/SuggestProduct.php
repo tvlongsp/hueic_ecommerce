@@ -26,4 +26,9 @@ class SuggestProduct extends Model
         'reply',
     ];
 
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
 }

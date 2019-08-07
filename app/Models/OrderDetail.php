@@ -23,4 +23,9 @@ class OrderDetail extends Model
         'total',
     ];
 
+    public function order()
+    {
+        return $this->belongsTo(Oder::class, 'order_id');
+    }
+
 }
